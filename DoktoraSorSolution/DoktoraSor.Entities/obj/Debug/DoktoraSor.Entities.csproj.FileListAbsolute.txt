@@ -1,0 +1,6 @@
+D:\Projeler\DoctorApp\DoktoraSorSolution\DoktoraSor.Entities\bin\Debug\DoktoraSor.Entities.dll
+D:\Projeler\DoctorApp\DoktoraSorSolution\DoktoraSor.Entities\bin\Debug\DoktoraSor.Entities.pdb
+D:\Projeler\DoctorApp\DoktoraSorSolution\DoktoraSor.Entities\obj\Debug\DoktoraSor.Entities.csproj.CoreCompileInputs.cache
+D:\Projeler\DoctorApp\DoktoraSorSolution\DoktoraSor.Entities\obj\Debug\DoktoraSor.Entities.dll
+D:\Projeler\DoctorApp\DoktoraSorSolution\DoktoraSor.Entities\obj\Debug\DoktoraSor.Entities.pdb
+D:\Projeler\DoctorApp\DoktoraSorSolution\DoktoraSor.Entities\obj\Debug\DoktoraSor.Entities.csprojAssemblyReference.cache

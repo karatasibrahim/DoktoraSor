@@ -1,0 +1,147 @@
+﻿@using DoktoraSor.Entities
+@using DoktoraSor.WebApp.Models
+
+@model List<Comment>
+
+@{
+    DoctorUser duser = CurrentSession.UserDoctor;
+    PatientUser puser = CurrentSession.UserPatient;
+
+}
+
+<link href="~/Content/assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" />
+
+@foreach (Comment item in Model)
+{
+
+
+        <div class="kt-portlet__body">
+            <div class="kt-widget3">
+                <div class="kt-widget3__item">
+                    <div class="kt-widget3__header">
+                        <div class="kt-widget3__user-img">
+                            <div class="kt-section__content">
+
+
+
+                                @if (item.DoctorOwner != null)
+                                {
+                                    <a href="#" class="kt-media kt-media--circle">
+                                        <img src="~/Images/UserImages/Users/Doctors/@item.DoctorOwner.ProfileImageFilename" />
+                                    </a>
+
+                                }
+                                else if (item.PatientOwner != null)
+                                {
+                                    <a href="#" class="kt-media kt-media--circle">
+                                        <img src="~/Images/UserImages/Users/Patients/@item.PatientOwner.ProfileImageFilename" />
+                                    </a>
+                                }
+                            
+                            </div>
+                            </div>
+                            <div class="kt-widget3__info">
+                                <a href="#" class="kt-widget3__username">
+                                    @if (item.DoctorOwner != null)
+                                    {
+                                    <i class="kt-menu__link-icon la la-user"></i>    @item.DoctorOwner.Username
+                                    }
+
+                                    else if (item.PatientOwner != null)
+                                    {
+                                    <i class="kt-menu__link-icon la la-clock-o"></i>  @item.PatientOwner.Username
+                                    }
+                                </a><br>
+                                <span class="kt-widget3__time">
+                                    <i class="kt-menu__link-icon la la-clock-o"></i> @item.ModifiedOn
+                                </span>
+                            </div>
+                        </div>
+                                <div class="kt-widget3__body">
+                                    <p class="kt-widget3__text">
+                                        <span class="col-md-10" id="comment_text_@item.Id" contenteditable="false">
+                                            @if (item.DoctorOwner != null)
+                                            {
+                                                @item.Text
+                                            }
+                                            @if (item.PatientOwner != null)
+                                            {
+                                                @item.Text
+                                            }
+                                        </span>
+                                    </p>
+
+                                    @if (duser!= null && duser.Id == item.DoctorOwner.Id)
+                                    {
+                                        <span class="col-md-2 text-right">
+                                            <button type="button" class="btn btn-warning  btn-sm" data-edit-mode="false" onclick="doComment(this, 'edit_clicked',@item.Id,'#comment_text_@item.Id');">
+                                                <i class="la la-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger  btn-sm" onclick="doComment(this, 'delete_clicked',@item.Id);">
+                                                <i class="la la-trash"></i>
+                                            </button>
+                                        </span>
+                                    }
+                                    else if (puser != null && puser.Id == item.PatientOwner.Id)
+                                    {
+                                        <span class="col-md-2 text-right">
+                                            <button type="button" class="btn btn-warning  btn-sm" data-edit-mode="false" onclick="doComment(this, 'edit_clicked',@item.Id,'#comment_text_@item.Id');">
+                                                <i class="la la-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger  btn-sm" onclick="doComment(this, 'delete_clicked',@item.Id);">
+                                                <i class="la la-trash"></i>
+                                            </button>
+                                        </span>
+                                    }
+                                </div>
+
+                            </div>
+
+            </div>
+        </div>
+  
+
+}
+
+@if (duser != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <input type="text" id="new_comment_text" class="form-control" placeholder="Yorum yaz..">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="button" onclick="doComment(this,'new_clicked',-1);">
+                        <i class="la la-send"></i> Gönder
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+}
+else if (puser != null)
+{
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <input type="text" id="new_comment_text" class="form-control" placeholder="yorumunuz..">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="button" onclick="doComment(this,'new_clicked',-1);">
+                        <span class="glyphicon glyphicon-send"></span> Gönder
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+}

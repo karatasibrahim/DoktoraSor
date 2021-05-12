@@ -1,0 +1,250 @@
+﻿@using DoktoraSor.Entities
+@using DoktoraSor.WebApp.Models
+
+@model DoctorUser
+
+
+
+@{
+    ViewBag.Title = "ShowDoctorProfile";
+    Layout = "~/Views/Shared/_OperationLayoutPage.cshtml";
+}
+@{
+
+    DoctorUser duser = CurrentSession.UserDoctor;
+
+ 
+
+
+
+}
+<div class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+    <div class="row">
+        <div class="col-xl-12">
+            <!--begin:: Widgets/Applications/User/Profile3-->
+            <div class="kt-portlet kt-portlet--height-fluid">
+                <div class="kt-portlet__body">
+                    <div class="kt-widget kt-widget--user-profile-3">
+                        <div class="kt-widget__top">
+                            <div class="kt-widget__media kt-hidden-">
+                                <img src="~/Images/UserImages/Users/Doctors/@Model.ProfileImageFilename" alt="image">
+                            </div>
+                            <div class="kt-widget__pic kt-widget__pic--danger kt-font-danger kt-font-boldest kt-font-light kt-hidden">
+                                JM
+                            </div>
+                            <div class="kt-widget__content">
+                                <div class="kt-widget__head">
+                                    <a href="#" class="kt-widget__username">
+                                        @(Model.Name+" "+ Model.Surname)
+                                        <i class="flaticon2-correct"></i>
+                                    </a>
+
+                                    <div class="kt-widget__action">
+                                        <button type="button" class="btn btn-label-success btn-sm btn-upper" onclick="location.href='@Url.Action("EditProfileDoctor","Operation")'">Profili Düzenle</button>&nbsp;
+                                        <button type="button" class="btn btn-label-danger btn-sm btn-upper" onclick="location.href='@Url.Action("RemoveProfile","Operation")'">Profili Sil</button>
+                                    </div>
+                                </div>
+
+                                <div class="kt-widget__subhead">
+                                    <a href="#"><i class="flaticon2-new-email"></i>@Model.Email</a>
+                                    
+                                        <a href="#"><i class="flaticon2-placeholder"></i>@Model.Degree.Title</a>
+                                        <a href="#"><i class="flaticon2-calendar-3"></i>@Model.Department.Title </a>
+                                        <a href="#"><i class="flaticon2-calendar-3"></i>Anatomi </a>
+                                    
+
+                                </div>
+
+                                <div class="kt-widget__info">
+                                    <div class="kt-widget__desc">
+                                        @if (Model.ProfileBio != null)
+                                        {
+                                            @Model.ProfileBio
+                                        }
+
+                                        <br>
+                                    </div>
+                                    <div class="kt-widget__progress">
+                                        <div class="kt-widget__text">
+                                            Progress
+                                        </div>
+                                        <div class="progress" style="height: 5px;width: 100%;">
+                                            <div class="progress-bar kt-bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="kt-widget__stats">
+                                            78%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-widget__bottom">
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-piggy-bank"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title">Gelir</span>
+                                    <span class="kt-widget__value">250,500<span>₺</span></span>
+                                </div>
+                            </div>
+
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-confetti"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title">Gider</span>
+                                    <span class="kt-widget__value">150,700<span>₺</span></span>
+                                </div>
+                            </div>
+
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-pie-chart"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title">Net Kazanç</span>
+                                    <span class="kt-widget__value">99,800<span>₺</span></span>
+                                </div>
+                            </div>
+
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-file-2"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title">@Model.Notes.Count Blog Yazısı</span>
+                                    <a href="#" class="kt-widget__value kt-font-brand">View</a>
+                                </div>
+                            </div>
+
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-chat-1"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title">@Model.Comments.Count Yorum</span>
+                                    <a href="#" class="kt-widget__value kt-font-brand">View</a>
+                                </div>
+                            </div>
+
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-network"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <div class="kt-section__content kt-section__content--solid">
+                                        <div class="kt-media-group">
+                                            @Model.DoctorLikeCount Beğenen
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end:: Widgets/Applications/User/Profile3-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="kt-portlet">
+            <div class="kt-portlet__body  kt-portlet__body--fit">
+                <div class="row row-no-padding row-col-separator-xl">
+                    <div class="col-xl-4">
+                        <!--begin:: Widgets/Daily Sales-->
+                        <div class="kt-portlet kt-portlet--height-fluid">
+                            <div class="kt-widget14">
+                                <div class="kt-widget14__header kt-margin-b-30">
+                                    <h3 class="kt-widget14__title">
+                                        Günlük Aktivite
+                                    </h3>
+                                    <span class="kt-widget14__desc">
+                                        Çevrimiçi aktif olduğunuz zamanlar
+                                    </span>
+                                </div>
+                                <div class="kt-widget14__chart" style="height:120px;">
+                                    <canvas id="kt_chart_daily_sales"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end:: Widgets/Daily Sales-->
+                    </div>
+                    <div class="col-xl-4">
+                        <!--begin:: Widgets/Profit Share-->
+                        <div class="kt-portlet kt-portlet--height-fluid">
+                            <div class="kt-widget14">
+                                <div class="kt-widget14__header">
+                                    <h3 class="kt-widget14__title">
+                                        Soru - Cevap
+                                    </h3>
+                                    <span class="kt-widget14__desc">
+                                        Kullanıcı soru-cevap takip oranı
+                                    </span>
+                                </div>
+                                <div class="kt-widget14__content">
+                                    <div class="kt-widget14__chart">
+                                        <div class="kt-widget14__stat">45</div>
+                                        <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
+                                    </div>
+                                    <div class="kt-widget14__legends">
+
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                            <span class="kt-widget14__stats">%47 Cevap verme</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                            <span class="kt-widget14__stats">%19 Soru takip</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end:: Widgets/Profit Share-->
+                    </div>
+                    <div class="col-xl-4">
+                        <!--begin:: Widgets/Revenue Change-->
+                        <div class="kt-portlet kt-portlet--height-fluid">
+                            <div class="kt-widget14">
+                                <div class="kt-widget14__header">
+                                    <h3 class="kt-widget14__title">
+                                        Özel Mesaj
+                                    </h3>
+                                    <span class="kt-widget14__desc">
+                                        Kullanıcı özel mesaj cevap veme oranı
+                                    </span>
+                                </div>
+                                <div class="kt-widget14__content">
+                                    <div class="kt-widget14__chart">
+                                        <div id="kt_chart_revenue_change" style="height: 150px; width: 150px;"></div>
+                                    </div>
+                                    <div class="kt-widget14__legends">
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-success"></span>
+                                            <span class="kt-widget14__stats">%+10 Kullanıcı</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                            <span class="kt-widget14__stats">%-7 Kullanıcı</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                            <span class="kt-widget14__stats">+20% Mesajlar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end:: Widgets/Revenue Change-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

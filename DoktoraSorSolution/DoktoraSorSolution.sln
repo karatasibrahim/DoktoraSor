@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoktoraSor.WebApp", "DoktoraSor.WebApp\DoktoraSor.WebApp.csproj", "{03909B4E-DEBA-474B-A1B6-E8A3F6DCF3F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoktoraSor.BusinessLayer", "DoktoraSor.BusinessLayer\DoktoraSor.BusinessLayer.csproj", "{230E7A0F-A3FF-4FDD-BFB9-5018CBBD6EF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoktoraSor.DataAccessLayer", "DoktoraSor.DataAccessLayer\DoktoraSor.DataAccessLayer.csproj", "{352DFFC7-1C80-4C59-A45F-EEB0188D9A4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoktoraSor.Entities", "DoktoraSor.Entities\DoktoraSor.Entities.csproj", "{BBD0650B-0F1D-4B9F-AFB0-F3AEBAD761EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoktoraSor.Common", "DoktoraSor.Common\DoktoraSor.Common.csproj", "{00B714D6-0F66-4941-9EA0-F5066B3697DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoktoraSor.Core", "DoktoraSor.Core\DoktoraSor.Core.csproj", "{0F0256A4-9464-4832-BEEB-1A596968971C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03909B4E-DEBA-474B-A1B6-E8A3F6DCF3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03909B4E-DEBA-474B-A1B6-E8A3F6DCF3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03909B4E-DEBA-474B-A1B6-E8A3F6DCF3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03909B4E-DEBA-474B-A1B6-E8A3F6DCF3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230E7A0F-A3FF-4FDD-BFB9-5018CBBD6EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230E7A0F-A3FF-4FDD-BFB9-5018CBBD6EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230E7A0F-A3FF-4FDD-BFB9-5018CBBD6EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230E7A0F-A3FF-4FDD-BFB9-5018CBBD6EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{352DFFC7-1C80-4C59-A45F-EEB0188D9A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{352DFFC7-1C80-4C59-A45F-EEB0188D9A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{352DFFC7-1C80-4C59-A45F-EEB0188D9A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{352DFFC7-1C80-4C59-A45F-EEB0188D9A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD0650B-0F1D-4B9F-AFB0-F3AEBAD761EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD0650B-0F1D-4B9F-AFB0-F3AEBAD761EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD0650B-0F1D-4B9F-AFB0-F3AEBAD761EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD0650B-0F1D-4B9F-AFB0-F3AEBAD761EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B714D6-0F66-4941-9EA0-F5066B3697DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B714D6-0F66-4941-9EA0-F5066B3697DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B714D6-0F66-4941-9EA0-F5066B3697DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B714D6-0F66-4941-9EA0-F5066B3697DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0256A4-9464-4832-BEEB-1A596968971C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0256A4-9464-4832-BEEB-1A596968971C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0256A4-9464-4832-BEEB-1A596968971C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0256A4-9464-4832-BEEB-1A596968971C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24FF8A2B-CD2D-4AB2-AAA8-84B0B87685DB}
+	EndGlobalSection
+EndGlobal

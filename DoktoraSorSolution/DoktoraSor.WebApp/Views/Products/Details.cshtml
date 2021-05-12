@@ -1,0 +1,87 @@
+﻿@using DoktoraSor.WebApp
+@model DoktoraSor.Entities.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_OperationLayoutPage.cshtml";
+}
+
+
+
+<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+    <div class="col-md-10">
+        <div class="kt-portlet">
+            <form class="kt-form">
+                <div class="kt-portlet__body kt-portlet">
+                    <div class="form-group form-group-last">
+                        <div class="alert alert-secondary" role="alert">
+                            <div class="alert-icon"><i class="flaticon-warning kt-font-brand"></i></div>
+                            <div class="alert-text">
+                                Paket Detayları
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            @Html.DisplayNameFor(model => model.Name)
+                            <div class="col-md-10">
+                                @Html.DisplayFor(model => model.Name)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            @Html.DisplayNameFor(model => model.Description)
+                            <div class="col-md-10">
+                                @Html.DisplayFor(model => model.Description)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            @Html.DisplayNameFor(model => model.Price)
+
+                            <div class="col-md-10">
+                                @Html.DisplayFor(model => model.Price)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            @Html.DisplayNameFor(model => model.CouponCode)
+                            <div class="col-md-10">
+                                @Html.DisplayFor(model => model.CouponCode)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            @Html.DisplayNameFor(model => model.IsCouponCode)
+                            <div class="col-md-10">
+                                @Html.DisplayFor(model => model.IsCouponCode)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kt-portlet__foot">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            @MyBootstrap.LinkButton("/Products/Edit/" + Model.Id, "warning", "btn-sm", string.Empty, "edit", "Düzenle")
+                            @MyBootstrap.LinkButton("/Products/Index/", "primary", "btn-sm", string.Empty, "arrow-left", "Geri")
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>

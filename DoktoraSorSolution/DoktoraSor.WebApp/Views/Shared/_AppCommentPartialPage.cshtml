@@ -1,0 +1,43 @@
+﻿@using DoktoraSor.BusinessLayer
+@using DoktoraSor.Entities
+
+@{
+    AppCommentManager appCommentManager = new AppCommentManager();
+    List<AppComment> list = appCommentManager.List();
+
+}
+
+<div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+        <h2>Kullanıcı Görüşleri</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+    </div>
+
+    <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+       <div class="swiper-wrapper">
+    @foreach (AppComment item in list)
+    {
+        <div class="swiper-slide">
+
+            <div class="testimonial-item">
+
+                <img src="~/Images/UserImages/Users/Patients/@item.PatientOwner.ProfileImageFilename" class="testimonial-img" alt="">
+                <h3>@item.PatientOwner.Username</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    @item.Text
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+
+            </div>
+
+        </div>
+    }
+
+</div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+</div>

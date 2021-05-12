@@ -1,0 +1,43 @@
+﻿@using DoktoraSor.WebApp
+@model DoktoraSor.Entities.Department
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_OperationLayoutPage.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+        <div class="col-md-10">
+            <div class="kt-portlet">
+                <form class="kt-form">
+                    <div class="kt-portlet__body kt-portlet">
+                        <div class="form-group form-group-last">
+                            <div class="alert alert-danger" role="alert">
+                                <div class="alert-icon"><i class="flaticon-warning kt-font-brand"></i></div>
+                                <div class="alert-text">
+                                    Bölüm Sil
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="form-group">
+                                @Html.DisplayNameFor(model => model.Title)
+                                <div class="col-md-10">
+                                    @Html.DisplayFor(model => model.Title)
+
+                                </div>
+                            </div>
+                            <div class="form-actions no-color">
+                                @MyBootstrap.Button("danger", "btn-sm", "submit", "trash", " Sil", "Kategoriyi silmek istediğinizden emin misiniz?") @MyBootstrap.LinkButton("/Departments/Index/", "primary", "btn-sm", string.Empty, "arrow-left", "Geri")
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

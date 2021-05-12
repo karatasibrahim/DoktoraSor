@@ -1,0 +1,41 @@
+﻿@using DoktoraSor.Entities
+@using DoktoraSor.WebApp.Models
+
+@model Note
+
+
+<link href="~/Content/assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" />
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="text-center">
+            @Model.Title
+        </h3>
+    </div>
+    <div class="col-md-12">
+
+        <hr />
+
+    </div>
+    <div class="col-md-12 text-right">
+        <i class="la la-user"></i>@Model.DoctorOwner.Username <br />
+        <i class="la la-clock-o"></i>@Model.ModifiedOn <br />
+    </div>
+    <div class="col-md-12">
+
+        <hr />
+
+    </div>
+    <div class="col-md-12">
+
+        <p class="text-justify">
+            @Model.Text
+        </p>
+
+    </div>
+
+
+
+</div>
+ 
